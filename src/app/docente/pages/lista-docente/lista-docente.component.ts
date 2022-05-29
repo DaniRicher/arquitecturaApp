@@ -3,8 +3,11 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-lista-docente',
   templateUrl: './lista-docente.component.html',
-  styles: [
-  ]
+  styles: [`
+  .estilo{
+    margin:10px;
+  }
+  `]
 })
 export class ListaDocenteComponent implements OnInit {
 

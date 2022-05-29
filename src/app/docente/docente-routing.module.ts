@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MainDocenteComponent } from './pages/main-docente/main-docente.component';
 import { GruposComponent } from './pages/grupos/grupos.component';
 import { ListaDocenteComponent } from './pages/lista-docente/lista-docente.component';
+import { CalendarioDocenteComponent } from './pages/calendario-docente/calendario-docente.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,7 @@ const routes: Routes = [
     children:[
       {path:'grupos', component: GruposComponent},
       {path:'lista', component: ListaDocenteComponent},
+      {path:'calendario', component: CalendarioDocenteComponent},
       {path:'**', redirectTo: 'grupos'}
     ]
   }

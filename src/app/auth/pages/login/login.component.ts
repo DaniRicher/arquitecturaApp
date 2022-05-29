@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ValidatorsService } from '../../../shared/validators/validators.service';
 
 @Component({
   selector: 'app-login',
@@ -9,27 +10,46 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   miFormulario:FormGroup=this.fb.group({
-    rol:['E', [Validators.required]]
+    rol:['', [Validators.required]],
+    codigo:[, [Validators.required]],
+    password:['', [Validators.required]]
   });
 
   usuario={
-    rol:'E'
+    rol:'',
   }
 
   constructor(private fb:FormBuilder,
               private routes:Router) { }
 
   ngOnInit(): void {
-    this.miFormulario.reset({...this.usuario});
+    // this.miFormulario.reset({
+    //   rol:'E',
+    //   codigo: 1,
+    //   password: 123,
+    // });
   }
 
   login(){
     const formvalue={...this.miFormulario.value}
     this.usuario=formvalue;
-    if(this.usuario.rol==='E'){
+    if(this.miFormulario.invalid){
+      this.miFormulario.markAllAsTouched();
+    }else if(this.usuario.rol==='E'){
       this.routes.navigate(['./estudiante']);
     }else{
       this.routes.navigate(['./docente']);
     }
+  }
+  validarContrasena(contraseña:any){
+    return this.miFormulario.get(contraseña)?.invalid
+           && this.miFormulario.get(contraseña)?.touched;
+  }
+  campoNoValido(campo:string){
+    return this.miFormulario.get(campo)?.invalid
+           && this.miFormulario.get(campo)?.touched;
+  }
+  campoNoValidoRol(campo:string){
+    return this.miFormulario.get(campo)?.invalid;
   }
 }

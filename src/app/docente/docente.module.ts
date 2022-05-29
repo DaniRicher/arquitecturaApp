@@ -7,13 +7,15 @@ import { ListaDocenteComponent } from './pages/lista-docente/lista-docente.compo
 import { MainDocenteComponent } from './pages/main-docente/main-docente.component';
 import { PrimengModule } from '../primeng/primeng.module';
 import { SharedModule } from '../shared/shared.module';
+import { CalendarioDocenteComponent } from './pages/calendario-docente/calendario-docente.component';
 
 
 @NgModule({
   declarations: [
     GruposComponent,
     ListaDocenteComponent,
-    MainDocenteComponent
+    MainDocenteComponent,
+    CalendarioDocenteComponent
   ],
   imports: [
     CommonModule,

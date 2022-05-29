@@ -14,13 +14,13 @@ import {MenuItem} from 'primeng/api';
 export class MenuComponent implements OnInit {
 
   items: MenuItem[]=[];
-  isLoading:any;
   constructor() { }
 
   ngOnInit(): void {
     this.items = [
-      {label: 'Docente', icon: 'pi pi-fw pi-user'},
-      {label: 'Calendar', icon: 'pi pi-fw pi-calendar'},
+      {label: 'Docente', icon: 'pi pi-fw pi-user', routerLink:'/docente/grupos'},
+      {label: 'Calendario', icon: 'pi pi-fw pi-calendar', routerLink:'/docente/calendario'},
+      {label: 'Listas', icon: 'pi pi-fw pi-calendar', routerLink:'/docente/lista'},
   ];
   }
 

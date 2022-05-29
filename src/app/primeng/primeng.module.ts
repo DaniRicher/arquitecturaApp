@@ -9,6 +9,18 @@ import {CardModule} from 'primeng/card';
 import {TabMenuModule} from 'primeng/tabmenu';
 import {MenubarModule} from 'primeng/menubar';
 import {InputTextModule} from 'primeng/inputtext';
+import {CalendarModule} from 'primeng/calendar';
+
+import {StyleClassModule} from 'primeng/styleclass';
+import { FullCalendarModule } from '@fullcalendar/angular'; // must go before plugins
+import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin!
+import interactionPlugin from '@fullcalendar/interaction'; // a plugin!
+
+FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+  dayGridPlugin,
+  interactionPlugin
+]);
+
 
 @NgModule({
   declarations: [],
@@ -19,7 +31,10 @@ import {InputTextModule} from 'primeng/inputtext';
     CardModule,
     TabMenuModule,
     MenubarModule,
-    InputTextModule
+    InputTextModule,
+    CalendarModule,
+    FullCalendarModule, // register FullCalendar with you app
+    StyleClassModule
   ]
 })
 export class PrimengModule { }

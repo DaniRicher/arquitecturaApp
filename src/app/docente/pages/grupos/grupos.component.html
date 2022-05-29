@@ -1,6 +1,4 @@
 <div class="estilo">
-
-    <app-menu></app-menu>
     
     <div class="text-layout">
         <h1>Asignaturas </h1>
@@ -8,50 +6,15 @@
     </div>
     
 
-    <div class="grid ">
-    
-        <div class="col md:col-4">
-            <p-card header="Programación web">
-                    <h3>Horario</h3>
+    <div class="grid estilo">
+        <div class="col-4" *ngFor="let asignatura of asignaturas; let i">
+            <p-card header="{{asignatura.materia}}">
+                    <h3>Horario: {{asignatura.horario}}</h3>
+                    <h3>Grupo: {{asignatura.grupo}}</h3>
             </p-card>
         </div>
+</div>
     
-        <div class="col md:col-4">
-            <p-card header="Arquitectura">
-                <h3>Horario</h3>
-            </p-card>
-        </div>
-    
-        <div class="col md:col-4">
-            <p-card header="Ingenieria se software">
-                <h3>Horario</h3>
-            </p-card>
-        </div>
-    </div>
-    
-    <div class="text-layout">
-        <h1>Listas</h1>
-    </div>
-    <div class="grid">
-    
-        <div class="col md:col-4">
-            <p-card header="Programación web">
-                    <h3>Horario</h3>
-            </p-card>
-        </div>
-    
-        <div class="col md:col-4">
-            <p-card header="Arquitectura">
-                <h3>Horario</h3>
-            </p-card>
-        </div>
-    
-        <div class="col md:col-4">
-            <p-card header="Ingenieria se software">
-                <h3>Horario</h3>
-            </p-card>
-        </div>
-    </div>
     
 
 </div>

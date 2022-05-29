@@ -7,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls:['./style.css']
 })
 export class GruposComponent implements OnInit {
+  
+  asignaturas=[
+    {
+      materia:'Programacion Web',
+      horario:'',
+      grupo:0,
+    },
+    
+  ]
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
 
 }

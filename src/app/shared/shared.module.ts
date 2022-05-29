@@ -1,24 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { ErrorPageComponent } from './error-page/error-page.component';
 import { MenuComponent } from './menu/menu.component';
 import { PrimengModule } from '../primeng/primeng.module';
+import { MenuEstudianteComponent } from './menu-estudiante/menu-estudiante.component';
 
 
 
 @NgModule({
   declarations: [
-    NavBarComponent,
-    ErrorPageComponent,
-    MenuComponent
+    MenuComponent,
+    MenuEstudianteComponent
   ],
   imports: [
     CommonModule,
     PrimengModule
   ],
   exports:[
-    MenuComponent
+    MenuComponent,
+    MenuEstudianteComponent
   ]
 })
 export class SharedModule { }

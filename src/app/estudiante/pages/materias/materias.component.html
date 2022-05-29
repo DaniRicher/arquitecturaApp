@@ -1,1 +1,18 @@
-<p>materias works!</p>
+<div class="estilo">
+    
+    <div class="text-layout estilo">
+        <h1>Asignaturas en curso </h1>
+    </div>
+    
+
+    <div class="grid estilo">
+            <div class="col-4" *ngFor="let asignatura of asignaturas; let i">
+                <p-card header="{{asignatura.materia}}" toggleable
+                        (click)="ruta()">
+                        <h3>Horario: {{asignatura.horario}}</h3>
+                        <h3>Grupo: {{asignatura.grupo}}</h3>
+                </p-card>
+            </div>
+    </div>
+
+</div>
