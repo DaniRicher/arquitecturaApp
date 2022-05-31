@@ -33,12 +33,14 @@
             <tr>
                 <th pSortableColumn="nombreCompleto">Nombre <p-sortIcon field="nombreCompleto"></p-sortIcon></th>
                 <th>Asistencia</th>
+                <th>Editar</th>
             </tr>
         </ng-template>
             <ng-template pTemplate="body" let-estudiante>
                 <tr>
                     <td>{{estudiante.nombreCompleto}}</td>
                     <td><p-checkbox class="flex justify-content-center" name="groupname" value="val1" [(ngModel)]="selectedValues"></p-checkbox></td>
+                    <td><button pButton icon="pi pi-cog" class="flex justify-content-center"></button></td>
                 </tr>
             </ng-template>
             <ng-template pTemplate="summary">
