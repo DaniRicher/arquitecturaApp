@@ -4,6 +4,7 @@ import { MainDocenteComponent } from './pages/main-docente/main-docente.componen
 import { GruposComponent } from './pages/grupos/grupos.component';
 import { ListaDocenteComponent } from './pages/lista-docente/lista-docente.component';
 import { CalendarioDocenteComponent } from './pages/calendario-docente/calendario-docente.component';
+import { CrudListaComponent } from './pages/crud-lista/crud-lista.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,7 @@ const routes: Routes = [
       {path:'grupos', component: GruposComponent},
       {path:'lista', component: ListaDocenteComponent},
       {path:'calendario', component: CalendarioDocenteComponent},
+      {path:'edit', component: CrudListaComponent},
       {path:'**', redirectTo: 'grupos'}
     ]
   }

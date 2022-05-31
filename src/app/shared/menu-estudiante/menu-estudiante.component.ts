@@ -20,7 +20,6 @@ export class MenuEstudianteComponent implements OnInit {
     this.items = [
       {label: 'Estudiante', icon: 'pi pi-fw pi-user', routerLink:'/estudiante/materias'},
       {label: 'Calendario', icon: 'pi pi-fw pi-calendar', routerLink:'/estudiante/calendario'},
-      {label: 'Listas', icon: 'pi pi-fw pi-calendar', routerLink:'/estudiante/lista'},
   ];
   }
 

@@ -1,10 +1,24 @@
 <div class="estilo">
     <p-toast></p-toast>
+    <div class="card">
+        <p-toolbar styleClass="mb-4">
+            <ng-template pTemplate="left">
+                <button pButton pRipple label="Nuevo" icon="pi pi-plus" class="p-button-success mr-2" (click)="openNew()"></button>
+                <button pButton pRipple label="Guardar" icon="pi pi-trash" class="p-button-danger mr-2"></button>
+                <button pButton pRipple label="Eliminar" icon="pi pi-trash" class="p-button-danger mr-2" (click)="deleteSelectedProducts()" [disabled]="!selectedProducts || !selectedProducts.length"></button>
+            </ng-template>
+    
+            <ng-template pTemplate="right">
+                <button pButton pRipple icon="pi pi-file-pdf" class="p-button-warning ml-2" pTooltip="PDF" tooltipPosition="bottom"></button>
+            </ng-template>
+        </p-toolbar>
+    </div>
+   
     <p-table [value]="estudiantes" id="miTabla">
         <ng-template pTemplate="caption">
             <div class="grid col col-12">
                 <div class="col-3">
-                    <img src="../../../../assets/images/logo.png" style="width: 100px;">
+                    <img src="../../../../assets/images/logo.png">
                 </div>
                 <div class="grid col-9">
                     <h5 class="col-9">Programa/Facultad:   </h5>
@@ -12,7 +26,6 @@
                     <h5 class="col-4">Grupo: </h5>
                     <h5 class="col-4">Periodo: </h5>
                     <h5 class="col-4">Docente: </h5>
-                    <button pButton pRipple icon="pi pi-file-pdf" class="p-button-warning ml-2" pTooltip="PDF" tooltipPosition="bottom"></button>
                 </div>
             </div>
         </ng-template>
@@ -20,14 +33,12 @@
             <tr>
                 <th pSortableColumn="nombreCompleto">Nombre <p-sortIcon field="nombreCompleto"></p-sortIcon></th>
                 <th>Asistencia</th>
-                <th>Fecha</th>
             </tr>
         </ng-template>
             <ng-template pTemplate="body" let-estudiante>
                 <tr>
                     <td>{{estudiante.nombreCompleto}}</td>
-                    <td><p-checkbox class="flex justify-content-center" name="groupname" value="val1" [(ngModel)]="selectedValues" [disabled]="true"></p-checkbox></td>
-                    <td>{{estudiante.fecha}}</td>
+                    <td><p-checkbox class="flex justify-content-center" name="groupname" value="val1" [(ngModel)]="selectedValues"></p-checkbox></td>
                 </tr>
             </ng-template>
             <ng-template pTemplate="summary">

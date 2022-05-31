@@ -1,8 +1,11 @@
 <div class="estilo">
-    <h1>Listas</h1>
+    <div class="grid col md:col-4">
+        <h1>Listas</h1>
+    </div>
     <div class="grid">
         <div class="col p-mt-2 estilo">
-            <p-table [value]="materias" responsiveLayout="scroll" #dt1>
+            <p-table [value]="asignatura" responsiveLayout="scroll" #dt1>
+
                 <ng-template pTemplate="caption">
                     <div class="flex align-items-center justify-content-between">
                         <span class="p-input-icon-left">
@@ -11,6 +14,7 @@
                         </span>
                     </div>
                 </ng-template>
+
                 <ng-template pTemplate="header">
                     <tr>
                         <th pSortableColumn="nombre">Nombre <p-sortIcon field="nombre"></p-sortIcon></th>
@@ -20,8 +24,8 @@
                         <th>Ver</th>
                     </tr>
                 </ng-template>
-                <ng-template pTemplate="body" let-materia >
-                    <tr >
+                <ng-template pTemplate="body" let-materia>
+                    <tr>
                         <td>{{materia.nombre}}</td>
                         <td>{{materia.grupo}}</td>
                         <td>{{materia.horario}}</td>

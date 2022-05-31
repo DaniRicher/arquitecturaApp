@@ -7,10 +7,10 @@
 
     <div class="grid estilo">
             <div class="col-4" *ngFor="let asignatura of asignaturas; let i">
-                <p-card header="{{asignatura.materia}}" toggleable
-                        (click)="ruta()">
+                <p-card header="{{asignatura.materia}}" toggleable>
                         <h3>Horario: {{asignatura.horario}}</h3>
                         <h3>Grupo: {{asignatura.grupo}}</h3>
+                        <button pButton label="Detalles..." class="left-50" (click)="lista()"> </button>
                 </p-card>
             </div>
     </div>

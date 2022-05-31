@@ -11,6 +11,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~13.3.0",
+    "@angular/cdk": "^13.3.8",
     "@angular/common": "~13.3.0",
     "@angular/compiler": "~13.3.0",
     "@angular/core": "~13.3.0",
@@ -21,6 +22,9 @@
     "@fullcalendar/angular": "^5.11.0",
     "@fullcalendar/daygrid": "^5.11.0",
     "@fullcalendar/interaction": "^5.11.0",
+    "FileSaver": "^0.10.0",
+    "jspdf": "^2.5.1",
+    "jspdf-autotable": "^3.5.24",
     "primeflex": "^3.2.0",
     "primeicons": "^5.0.0",
     "primeng": "^13.4.1",

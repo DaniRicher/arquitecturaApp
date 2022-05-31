@@ -8,6 +8,8 @@ import { MainDocenteComponent } from './pages/main-docente/main-docente.componen
 import { PrimengModule } from '../primeng/primeng.module';
 import { SharedModule } from '../shared/shared.module';
 import { CalendarioDocenteComponent } from './pages/calendario-docente/calendario-docente.component';
+import { CrudListaComponent } from './pages/crud-lista/crud-lista.component';
+import { ListaPorMateriaDocenteComponent } from './pages/lista-por-materia-docente/lista-por-materia-docente.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { CalendarioDocenteComponent } from './pages/calendario-docente/calendari
     GruposComponent,
     ListaDocenteComponent,
     MainDocenteComponent,
-    CalendarioDocenteComponent
+    CalendarioDocenteComponent,
+    CrudListaComponent,
+    ListaPorMateriaDocenteComponent
   ],
   imports: [
     CommonModule,

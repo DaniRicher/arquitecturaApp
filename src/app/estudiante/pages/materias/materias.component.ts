@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DialogService } from 'primeng/dynamicdialog';
+import { ListaEstudianteComponent } from '../lista-estudiante/lista-estudiante.component';
 
 @Component({
   selector: 'app-materias',
@@ -12,7 +14,8 @@ import { Router } from '@angular/router';
     p-card{
       cursor:pointer;
     }
-  `]
+  `],
+  providers:[DialogService]
 })
 export class MateriasComponent implements OnInit {
 
@@ -44,13 +47,17 @@ export class MateriasComponent implements OnInit {
     },
   ]
 
-  constructor(private router:Router) { }
+  constructor(private dialogService:DialogService) { }
+
 
   ngOnInit(): void {
   }
 
-  ruta(){
-    this.router.navigate(['/estudiante/lista'])
+  lista(){
+    const ref=this.dialogService.open(ListaEstudianteComponent,{
+      header:'Detalles',
+      width:'70%'
+    })
   }
 
 }
