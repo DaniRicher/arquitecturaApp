@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
       this.miFormulario.markAllAsTouched();
     }else if(this.usuario.rol==='E'){
       this.routes.navigate(['./estudiante']);
-    }else{
+    }else if(this.usuario.rol==='D'){
       this.routes.navigate(['./docente']);
     }
   }
