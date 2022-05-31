@@ -4,7 +4,7 @@
         <p-toolbar styleClass="mb-4">
             <ng-template pTemplate="left">
                 <button pButton pRipple label="Nuevo" icon="pi pi-plus" class="p-button-success mr-2" (click)="openNew()"></button>
-                <button pButton pRipple label="Guardar" icon="pi pi-trash" class="p-button-danger mr-2"></button>
+                <button pButton pRipple label="Guardar" icon="pi pi-save" class="p-button-primary mr-2"></button>
                 <button pButton pRipple label="Eliminar" icon="pi pi-trash" class="p-button-danger mr-2" (click)="deleteSelectedProducts()" [disabled]="!selectedProducts || !selectedProducts.length"></button>
             </ng-template>
     

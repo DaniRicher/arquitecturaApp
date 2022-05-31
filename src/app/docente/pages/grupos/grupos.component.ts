@@ -37,7 +37,7 @@ export class GruposComponent implements OnInit {
   lista(){
     const ref=this.dialogService.open(ListaPorMateriaDocenteComponent,{
       header:``,
-        width: '75%'
+        width: '90%'
     })
   }
 }

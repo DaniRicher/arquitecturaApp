@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MenuItem} from 'primeng/api';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-menu',
@@ -21,6 +22,7 @@ export class MenuComponent implements OnInit {
       {label: 'Docente', icon: 'pi pi-fw pi-user', routerLink:'/docente/grupos'},
       {label: 'Listas', icon: 'pi pi-fw pi-bookmark', routerLink:'/docente/lista'},
       {label: 'Calendario', icon: 'pi pi-fw pi-calendar', routerLink:'/docente/calendario'},
+      {label: 'Cerrar Sesion', icon: 'pi pi-sign-out', routerLink:'../auth/login',}
 
   ];
   }
