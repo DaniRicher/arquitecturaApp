@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Materia } from '../../interfaces/materia.interfaces';
 import {DialogService} from 'primeng/dynamicdialog';
 import { CrudListaComponent } from '../crud-lista/crud-lista.component';
@@ -15,6 +15,7 @@ import { CrudListaComponent } from '../crud-lista/crud-lista.component';
 })
 export class ListaDocenteComponent implements OnInit {
 
+  filterPost='';
   materias:Materia[]=[
     {
       nombre:'Programacion web',
@@ -28,8 +29,28 @@ export class ListaDocenteComponent implements OnInit {
       grupo: 1,
       asistencia:'20-05-15',
     },
+    {
+      nombre:'empresarial',
+      horario:'2-4',
+      grupo: 1,
+      asistencia:'20-05-15',
+    },
+    {
+      nombre:'Innovación empresarial',
+      horario:'2-4',
+      grupo: 1,
+      asistencia:'20-05-15',
+    },
   ]
+  materia2:Materia={
+      nombre:'',
+      asistencia:'',
+      grupo:2,
+      horario:''
+  }
   constructor(private dialogService:DialogService) { }
+
+  // @ViewChild('txtBuscar') txtBuscar!:ElementRef<HTMLInputElement>;
 
   ngOnInit(): void {
   }
@@ -38,6 +59,16 @@ export class ListaDocenteComponent implements OnInit {
       header: '',
         width: '70%'
     });
+  }
+  buscar(){
+    // const valor= this.txtBuscar.nativeElement.value
+    // console.log(valor);
+    const resp= this.materias.forEach(resp=>{
+      resp.nombre
+    });
+    console.log(this.materia2.nombre);
+    
+    this.materia2.nombre=''
   }
 
 }

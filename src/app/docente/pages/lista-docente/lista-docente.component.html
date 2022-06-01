@@ -7,7 +7,7 @@
                     <div class="flex align-items-center justify-content-between">
                         <span class="p-input-icon-left">
                             <i class="pi pi-search"></i>
-                            <input pInputText type="text" placeholder="Buscar..." />
+                            <input pInputText type="text" placeholder="Buscar..." name="filterPost" (keyup.enter)="buscar()" [(ngModel)]="materia2.nombre"/>
                         </span>
                     </div>
                 </ng-template>
@@ -16,11 +16,11 @@
                         <th pSortableColumn="nombre">Nombre <p-sortIcon field="nombre"></p-sortIcon></th>
                         <th pSortableColumn="grupo">Grupo <p-sortIcon field="grupo"></p-sortIcon></th>
                         <th pSortableColumn="horario">Horario <p-sortIcon field="horario"></p-sortIcon></th>
-                        <th pSortableColumn="horario">Fecha <p-sortIcon field="horario"></p-sortIcon></th>
+                        <th pSortableColumn="fecha">Fecha <p-sortIcon field="fecha"></p-sortIcon></th>
                         <th>Ver</th>
                     </tr>
                 </ng-template>
-                <ng-template pTemplate="body" let-materia >
+                <ng-template pTemplate="body" let-materia>
                     <tr >
                         <td>{{materia.nombre}}</td>
                         <td>{{materia.grupo}}</td>
@@ -33,3 +33,4 @@
         </div>
     </div>
 </div>
+
