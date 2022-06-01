@@ -10,6 +10,9 @@ import { SharedModule } from '../shared/shared.module';
 import { CalendarioDocenteComponent } from './pages/calendario-docente/calendario-docente.component';
 import { CrudListaComponent } from './pages/crud-lista/crud-lista.component';
 import { ListaPorMateriaDocenteComponent } from './pages/lista-por-materia-docente/lista-por-materia-docente.component';
+import { FormBuilder } from '@angular/forms';
+import { ReactiveFormsModule } from "@angular/forms";
+
 
 
 @NgModule({
@@ -25,7 +28,9 @@ import { ListaPorMateriaDocenteComponent } from './pages/lista-por-materia-docen
     CommonModule,
     DocenteRoutingModule,
     PrimengModule,
-    SharedModule
-  ]
+    SharedModule,
+    ReactiveFormsModule
+  ],
+  providers:[FormBuilder]
 })
 export class DocenteModule { }

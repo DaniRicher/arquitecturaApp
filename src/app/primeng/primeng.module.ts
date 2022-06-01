@@ -20,6 +20,7 @@ import {TableModule} from 'primeng/table';
 import {DynamicDialogModule} from 'primeng/dynamicdialog';
 import {ToastModule} from 'primeng/toast';
 import {ToolbarModule} from 'primeng/toolbar';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -43,7 +44,8 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     TableModule,
     DynamicDialogModule,
     ToastModule,
-    ToolbarModule
+    ToolbarModule,
+    ConfirmDialogModule
   ]
 })
 export class PrimengModule { }
