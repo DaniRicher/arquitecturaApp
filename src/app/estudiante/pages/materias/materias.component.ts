@@ -54,8 +54,9 @@ export class MateriasComponent implements OnInit {
   }
 
   lista(){
+    
     const ref=this.dialogService.open(ListaEstudianteComponent,{
-      header:'Detalles',
+      header:`Detalles `,
       width:'70%'
     })
   }

@@ -14,21 +14,18 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class CrudListaComponent implements OnInit {
 
-  selectedValues: any[] = [
-    {
-      seleccion:true
-    }
-  ];
   agregar:boolean=false;
   edit:boolean=false;
-  otroEstudiante:Estudiante[]=[]
-
-  estudiantes:Estudiante[]=[
+  
+ estudiantes:Estudiante[]=[
     {
       nombreCompleto:'Daniel',
       asistencia:true,
     }
   ]
+  cloneStuden:Estudiante[]=[]
+  cloneAsistencia:Estudiante[]=[]
+
   miFormulario:FormGroup=this.fb.group({
     nombreCompleto:['', [Validators.required]],
     asistencia:[false,]
@@ -42,6 +39,7 @@ export class CrudListaComponent implements OnInit {
 openNew(){
   this.agregar=true;
   this.edit=false
+  this.miFormulario.reset();
 }
 confirmar(){
   this.agregar=false;
@@ -74,12 +72,17 @@ eliminar(index:number){
     }
   })
 }
-editar(i:number){
+editar(estudiante:any){
   this.agregar=false;
   this.edit=true;
+  this.cloneStuden=estudiante.nombreCompleto
+  this.cloneAsistencia=estudiante.asistencia;
 }
-confirmEdit(){
-  console.log('Edit confirmado');
+confirmEdit(estudiante:any){
+  this.edit=false;
+  const valores = this.miFormulario.value
+  this.estudiantes.values
+  this.miFormulario.reset();
 }
 guardar(){
 

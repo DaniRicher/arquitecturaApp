@@ -15,7 +15,7 @@
     </div>
    
     
-    <p-table [(selection)]="selectedValues" [value]="estudiantes">
+    <p-table [value]="estudiantes">
         <ng-template pTemplate="caption">
             <div class="grid col col-12">
                 <div class="col-3">
@@ -38,80 +38,82 @@
                 <th>Editar/Eliminar</th>
             </tr>
         </ng-template>
-            <ng-template pTemplate="body" let-estudiante let-i="rowIndex" #paraEditar>
+            <ng-template pTemplate="body" let-estudiante let-i="rowIndex">
                 <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
                 <tr>
                     <td>{{i+1}}</td>
                     <td>{{estudiante.nombreCompleto}}</td>
                     <td><p-checkbox class="flex justify-content-center" [(ngModel)]="estudiante.asistencia" [binary]="true" [disabled]="true"></p-checkbox></td>
-                    <td><button pButton icon="pi pi-cog" class="" (click)="editar(i)"></button>
+                    <td><button pButton icon="pi pi-cog" class="" (click)="editar(estudiante)"></button>
                     <button pButton icon="pi pi-info-circle" label="Eliminar" class="ml-2 p-button-danger" (click)="eliminar(i)"></button></td>
+
                 </tr>
             </ng-template>
-            <ng-template pTemplate="summary">
+            <ng-template pTemplate="summary" >
                 <div class="grid col-10">
-                    <h5 class="col-5">Fecha:  </h5>
+                    <h5 class="col-5">Fecha: </h5>
                     <h5 class="col-4">Salon: </h5>
                     <h5 class="col-5">Tema de clases: </h5>
                     <h5 class="col-4">Firma: </h5>
                 </div>
             </ng-template>
     </p-table>
-  
-    
-<div class="grid" *ngIf="agregar" >
-    <div>
-        <form [formGroup]="miFormulario" (ngSubmit)="confirmar()" >
-            <div class="grid wrap-input100 estilo">
-                <span class="col-12">Agregar estudiante</span>
-                <span class="label-input100 col-12">Nombre</span>
-                <input class="input100 text-placeholder"
-                       type="text" 
-                       formControlName="nombreCompleto"
-                       placeholder="Ingrese el nombre">
-                <span  class="focus-input100"></span>
+
+
+            <div class="grid" *ngIf="agregar" >
+                <div>
+                    <form [formGroup]="miFormulario" (ngSubmit)="confirmar()" >
+                        <div class="grid wrap-input100 estilo">
+                            <span class="col-12">Agregar estudiante</span>
+                            <span class="label-input100 col-12">Nombre</span>
+                            <input class="input100 text-placeholder"
+                                   type="text" 
+                                   formControlName="nombreCompleto"
+                                   placeholder="Ingrese el nombre">
+                            <span  class="focus-input100"></span>
+                        </div>
+                        
+                        <div class="grid  estilo">
+                            <span class="label-input100 col-6">Asistencia</span>
+                            <p-checkbox class="col-6" formControlName="asistencia" [binary]="true"></p-checkbox>
+                            <span  class="focus-input100"></span>
+                        </div>
+                        <div class="grid justify-content-end">
+                            <button pButton  label="Agregar" icon="pi pi-cloud-upload" type="submit"></button>
+                            <button pButton  class="ml-2 p-button-danger" label="Cancelar" icon="pi pi-exclamation-circle" (click)="cancelar()"></button>
+            
+                        </div>
+                    </form>
+                </div>
             </div>
             
-            <div class="grid  estilo">
-                <span class="label-input100 col-6">Asistencia</span>
-                <p-checkbox class="col-6" formControlName="asistencia" [binary]="true"></p-checkbox>
-                <span  class="focus-input100"></span>
-            </div>
-            <div class="grid justify-content-end">
-                <button pButton  label="Agregar" icon="pi pi-cloud-upload" type="submit"></button>
-                <button pButton  class="ml-2 p-button-danger" label="Cancelar" icon="pi pi-exclamation-circle" (click)="cancelar()"></button>
-
-            </div>
-        </form>
-    </div>
-</div>
-
-<div class="grid" *ngIf="edit">
-        <div>
-            <form [formGroup]="miFormulario" (ngSubmit)="confirmEdit()" >
-                <div class="grid wrap-input100 estilo">
-                    <span class="col-12">Editando estudiante...</span>
-                    <span class="label-input100 col-12">Nombre</span>
-                    <input class="input100 text-placeholder"
-                           type="text"
-                           formControlName="nombreCompleto"
-                           placeholder="Ingrese el nombre">
-                    <span  class="focus-input100"></span>
-                </div>
+            <div class="grid" *ngIf="edit">
+                    <div >
+                        <form [formGroup]="miFormulario" (ngSubmit)="confirmEdit(cloneStuden)">
+                            <div class="grid wrap-input100 estilo">
+                                <span class="col-12">Editando estudiante...</span>
+                                <span class="label-input100 col-12">Nombre</span>
+                                <input class="input100 text-placeholder"
+                                       type="text"
+                                       [(ngModel)]="cloneStuden"
+                                       formControlName="nombreCompleto"
+                                       placeholder="Ingrese el nombre">
+                                <span  class="focus-input100"></span>
+                            </div>
+                            
+                            <div class="grid  estilo">
+                                <span class="label-input100 col-6">Asistencia</span>
+                                <p-checkbox class="col-6" formControlName="asistencia" [(ngModel)]="cloneAsistencia" [binary]="true"></p-checkbox>
+                                <span  class="focus-input100"></span>
+                            </div>
+                            <div class="grid justify-content-end">
+                                <button pButton  label="Editar" icon="pi pi-cloud-upload" type="submit"></button>
+                                <button pButton  class="ml-2 p-button-danger" label="Cancelar" icon="pi pi-exclamation-circle" (click)="cancelar()"></button>
                 
-                <div class="grid  estilo">
-                    <span class="label-input100 col-6">Asistencia</span>
-                    <p-checkbox class="col-6" formControlName="asistencia" [binary]="true"></p-checkbox>
-                    <span  class="focus-input100"></span>
-                </div>
-                <div class="grid justify-content-end">
-                    <button pButton  label="Editar" icon="pi pi-cloud-upload" type="submit"></button>
-                    <button pButton  class="ml-2 p-button-danger" label="Cancelar" icon="pi pi-exclamation-circle" (click)="cancelar()"></button>
-    
-                </div>
-            </form>
-        </div>
-</div>
+                            </div>
+                        </form>
+                    </div>
+            </div>
 
    
 </div>
