@@ -21,7 +21,8 @@ export class MenuEstudianteComponent implements OnInit {
 
   ngOnInit(): void {
     this.items = [
-      {label: 'Estudiante', icon: 'pi pi-fw pi-user', routerLink:'/estudiante/materias'},
+      {label: this.authService.usuario.name, disabled:true},
+      {label: 'Materias', icon: 'pi pi-fw pi-user', routerLink:'/estudiante/materias'},
       // {label: 'Calendario', icon: 'pi pi-fw pi-calendar', routerLink:'/estudiante/calendario'}, 
       // {label: 'Cerrar Sesión', icon: 'pi pi-fw pi-sign-out', routerLink:'../auth/login'}, 
   ];

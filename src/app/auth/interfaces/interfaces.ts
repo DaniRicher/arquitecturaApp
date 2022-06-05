@@ -5,10 +5,14 @@ export interface AuthResponse{
     uid?:string;
     name?:string;
     token?:string;
+    email?:string;
+    codigo?:number;
     msg?:string; 
 }
 
 export interface Usuario{
     uid:string;
     name:string;
+    email:string;
+    codigo:number;
 }
