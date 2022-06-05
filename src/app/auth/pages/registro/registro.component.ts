@@ -1,6 +1,9 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ValidatorsService } from '../../../shared/validators/validators.service';
+import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-registro',
@@ -21,9 +24,15 @@ export class RegistroComponent implements OnInit {
     codigo:['', [Validators.required]],
     password:['', [Validators.required]],
   });
+
+  usuario={
+    rol:''
+  }
   
   constructor(private fb:FormBuilder,
-              private validatorService:ValidatorsService) { }
+              private validatorService:ValidatorsService,
+              private router:Router,
+              private authService:AuthService) { }
 
   ngOnInit(): void {
   }
@@ -42,7 +51,21 @@ export class RegistroComponent implements OnInit {
   }
 
   submitFormulario(){
-    this.miFormulario.markAllAsTouched();
+   
+    const {rol, email, name, codigo, password} =this.miFormulario.value;
+
+    this.authService.registro(rol, email, name, codigo, password)
+      .subscribe(ok=>{
+        if(ok===true){
+          if(rol==='E'){
+            this.router.navigateByUrl('/estudiante');
+          }else if(rol==='D'){
+            this.router.navigateByUrl('/docente');
+          }
+        }else{
+          Swal.fire('Error', ok, 'error' );
+        }
+      });
   }
 
 }

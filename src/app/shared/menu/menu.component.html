@@ -1,22 +1,11 @@
 
 
-<!-- <p-menubar [model]="items">
-    <input type="text" class="" pInputText placeholder="Buscar Asignatura...">
-    <button pButton icon="pi pi-search" class="espacio p-button-raised p-button-rounded " ></button>
-    <button pButton 
-            label="Salir" 
-            class="espacio p-button-text"
-            icon="pi pi-"
-            ></button>
-            
-</p-menubar> -->
-
 <div class="grid col-12 ">
-    <div class="col md:col-12">
-        <p-tabMenu [model]="items" class=""></p-tabMenu>       
+    <div class="col-9">
+        <p-tabMenu [model]="items"></p-tabMenu> 
     </div>
-    <!-- <div class="col-3">
-        <button pButton label="Cerrar Sesión"></button>
-    </div>   -->
+    <div class="col-3 justify-content-end">
+        <button pButton label="Cerrar Sesion" (click)="logout()"></button>
+    </div>
 </div>
             

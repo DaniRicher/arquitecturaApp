@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DialogService } from 'primeng/dynamicdialog';
 import { ListaEstudianteComponent } from '../lista-estudiante/lista-estudiante.component';
+import { AuthService } from '../../../auth/services/auth.service';
 
 @Component({
   selector: 'app-materias',
@@ -47,7 +48,12 @@ export class MateriasComponent implements OnInit {
     },
   ]
 
-  constructor(private dialogService:DialogService) { }
+  get usuario(){
+    return this.authService.usuario;
+  }
+
+  constructor(private dialogService:DialogService,
+              private authService:AuthService) { }
 
 
   ngOnInit(): void {

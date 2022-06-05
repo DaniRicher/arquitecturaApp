@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { Materia } from 'src/app/docente/interfaces/materia.interfaces';
-import { Estudiante } from '../../../docente/interfaces/Estudiante.inteface';
 
 
 @Component({
@@ -18,6 +17,7 @@ import { Estudiante } from '../../../docente/interfaces/Estudiante.inteface';
   providers:[MessageService]
 })
 export class ListaEstudianteComponent implements OnInit {
+  
   estudiantes:any[]=[
     {
       nombreCompleto:'Daniel',

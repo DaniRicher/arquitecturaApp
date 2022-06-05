@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { Router } from '@angular/router';
+import { AuthService } from '../../auth/services/auth.service';
 
 @Component({
   selector: 'app-menu-estudiante',
@@ -14,14 +16,19 @@ import { MenuItem } from 'primeng/api';
 export class MenuEstudianteComponent implements OnInit {
 
   items: MenuItem[]=[];
-  constructor() { }
+  constructor(private router:Router,
+              private authService:AuthService) { }
 
   ngOnInit(): void {
     this.items = [
       {label: 'Estudiante', icon: 'pi pi-fw pi-user', routerLink:'/estudiante/materias'},
       // {label: 'Calendario', icon: 'pi pi-fw pi-calendar', routerLink:'/estudiante/calendario'}, 
-      {label: 'Cerrar Sesión', icon: 'pi pi-fw pi-sign-out', routerLink:'../auth/login'}, 
+      // {label: 'Cerrar Sesión', icon: 'pi pi-fw pi-sign-out', routerLink:'../auth/login'}, 
   ];
+  }
+  logout(){
+    this.router.navigateByUrl('/auth'),
+    this.authService.logout();
   }
 
 }

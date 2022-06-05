@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DialogService } from 'primeng/dynamicdialog';
 import { Materia } from '../../interfaces/materia.interfaces';
 import { ListaPorMateriaDocenteComponent } from '../lista-por-materia-docente/lista-por-materia-docente.component';
+import { AuthService } from '../../../auth/services/auth.service';
 
 
 @Component({
@@ -27,8 +28,12 @@ export class GruposComponent implements OnInit {
     },
     
   ]
+  get usuario(){
+    return this.authService.usuario;
+  }
 
-  constructor(private dialogService:DialogService) { }
+  constructor(private dialogService:DialogService,
+              private authService:AuthService) { }
 
   ngOnInit(): void {
   }
