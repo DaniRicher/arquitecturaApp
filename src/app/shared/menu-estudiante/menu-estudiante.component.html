@@ -5,8 +5,12 @@
     <div class="col-9">
         <p-tabMenu [model]="items"></p-tabMenu>
     </div>
-    <div class="col-3">
-        <button pButton label="Cerrar Sesion" (click)="logout()"></button>
+    <div class="flex col-3 justify-content-end">
+        <button pButton label="Cerrar Sesion" 
+                class="p-button-danger"
+                icon="pi pi-power-off" 
+                style="height:50px;"
+                (click)="logout()"></button>
     </div>
 </div>
 

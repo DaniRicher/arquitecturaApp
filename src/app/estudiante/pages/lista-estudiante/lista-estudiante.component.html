@@ -7,18 +7,25 @@
                     <img src="../../../../assets/images/logo.png" style="width: 100px;">
                 </div>
                 <div class="grid col-9">
-                    <h5 class="col-9">Programa/Facultad:   </h5>
-                    <h5 class="col-12">Materia: </h5>
-                    <h5 class="col-4">Grupo: </h5>
-                    <h5 class="col-4">Periodo: </h5>
-                    <h5 class="col-4">Docente: </h5>
-                    <button pButton pRipple icon="pi pi-file-pdf" class="p-button-warning ml-2" pTooltip="PDF" tooltipPosition="bottom"></button>
+                    <h5 class="col-9">Programa/Facultad: Ingenieria de sistemas</h5>
+                    <h5 class="col-12">Materia: Programación web</h5>
+                    <h5 class="col-4">Grupo: 4</h5>
+                    <h5 class="col-4">Periodo: 2022-I </h5>
+                    <h5 class="col-4">Docente: Johan Robles </h5>
+                    <a href="../../../../assets/images/ListaEstudiante.pdf"
+                           pRipple
+                           class="p-button-warning ml-2"
+                           icon="pi pi-file-pdf"
+                           download="Asistencia Estudiante"
+                           pTooltip="PDF"
+                           pButton></a>
                 </div>
             </div>
         </ng-template>
         <ng-template pTemplate="header">
             <tr>
-                <th pSortableColumn="nombreCompleto">Nombre <p-sortIcon field="nombreCompleto"></p-sortIcon></th>
+                <th pSortableColumn="nombreCompleto">Nombre <p-sortIcon 
+                    field="nombreCompleto"></p-sortIcon></th>
                 <th>Asistencia</th>
                 <th>Fecha</th>
             </tr>
@@ -26,16 +33,17 @@
             <ng-template pTemplate="body" let-estudiante>
                 <tr>
                     <td>{{estudiante.nombreCompleto}}</td>
-                    <td><p-checkbox class="flex justify-content-center"[(ngModel)]="estudiante.asistencia" [binary]="true" [disabled]="true"></p-checkbox></td>
+                    <td><p-checkbox class="flex justify-content-center"
+                                    [(ngModel)]="estudiante.asistencia" 
+                                    [binary]="true" 
+                                    [disabled]="true"></p-checkbox></td>
                     <td>{{estudiante.fecha}}</td>
                 </tr>
             </ng-template>
             <ng-template pTemplate="summary">
                 <div class="grid col-10">
-                    <h5 class="col-5">Fecha:  </h5>
-                    <h5 class="col-4">Salon: </h5>
-                    <h5 class="col-5">Tema de clases: </h5>
-                    <h5 class="col-4">Firma: </h5>
+                    <h5 class="col-4">Salon: Lab. Modelo y simulación</h5>
+                    <h5 class="col-5">Tema de clases: Patrón arquitectonicos</h5>
                 </div>
             </ng-template>
     </p-table>

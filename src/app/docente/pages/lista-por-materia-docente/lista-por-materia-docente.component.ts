@@ -15,13 +15,13 @@ export class ListaPorMateriaDocenteComponent implements OnInit {
     {
       nombre:'Programación Web',
       grupo:4,
-      horario:'8-10',
+      horario:'6-8',
       asistencia:'2020-15-05'
     },
     {
       nombre:'Programación Web',
-      grupo:2,
-      horario:'8-10',
+      grupo:4,
+      horario:'6-8',
       asistencia:'2020-16-04'
     },
     {
@@ -33,7 +33,7 @@ export class ListaPorMateriaDocenteComponent implements OnInit {
     {
       nombre:'Programación Web',
       grupo:3,
-      horario:'8-10',
+      horario:'10-12',
       asistencia:'2020-20-2'
     },
   ]

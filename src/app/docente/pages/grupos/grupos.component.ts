@@ -33,6 +33,18 @@ export class GruposComponent implements OnInit {
       grupo:0,
       asistencia:'',
     },
+    {
+      nombre:'Redes',
+      horario:'10-12',
+      grupo:0,
+      asistencia:'',
+    },
+    {
+      nombre:'Inteligencia artificial',
+      horario:'10-12',
+      grupo:0,
+      asistencia:'',
+    },
     
   ]
   asig:any=[]

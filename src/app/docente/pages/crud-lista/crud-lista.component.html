@@ -9,7 +9,15 @@
             </ng-template>
     
             <ng-template pTemplate="right">
-                <button pButton pRipple icon="pi pi-file-pdf" class="p-button-warning ml-2" pTooltip="PDF" tooltipPosition="bottom"></button>
+                <!-- <button pButton pRipple icon="pi pi-file-pdf" class="p-button-warning ml-2" pTooltip="PDF" 
+                        tooltipPosition="bottom"></button> -->
+                        <a href="../../../../assets/images/Lista.pdf"
+                           pRipple
+                           class="p-button-warning ml-2"
+                           icon="pi pi-file-pdf"
+                           download="Asistencia"
+                           pTooltip="PDF"
+                           pButton></a>
             </ng-template>
         </p-toolbar>
     </div>
@@ -22,18 +30,18 @@
                     <img src="../../../../assets/images/logo.png">
                 </div>
                 <div class="grid col-9">
-                    <h5 class="col-9">Programa/Facultad:   </h5>
-                    <h5 class="col-12">Materia: </h5>
-                    <h5 class="col-4">Grupo: </h5>
-                    <h5 class="col-4">Periodo: </h5>
-                    <h5 class="col-4">Docente: </h5>
+                    <h5 class="col-9">Programa/Facultad: Ingenieria de Sistemas  </h5>
+                    <h5 class="col-12">Materia: Programación web </h5>
+                    <h5 class="col-4">Grupo: 4</h5>
+                    <h5 class="col-4">Periodo: 2022-I</h5>
+                    <h5 class="col-4">Docente: {{name}} </h5>
                 </div>
             </div>
         </ng-template>
         <ng-template pTemplate="header">
             <tr >
                 <th>#</th>
-                <th pSortableColumn="nombreCompleto">Nombre <p-sortIcon field="nombreCompleto"></p-sortIcon></th>
+                <th pSortableColumn="nombreCompleto">Nombre y Apellido <p-sortIcon field="nombreCompleto"></p-sortIcon></th>
                 <th>Asistencia</th>
                 <th>Editar/Eliminar</th>
             </tr>
@@ -51,10 +59,9 @@
             </ng-template>
             <ng-template pTemplate="summary" >
                 <div class="grid col-10">
-                    <h5 class="col-5">Fecha: </h5>
-                    <h5 class="col-4">Salon: </h5>
-                    <h5 class="col-5">Tema de clases: </h5>
-                    <h5 class="col-4">Firma: </h5>
+                    <h5 class="col-5">Fecha: 2020-15-05 </h5>
+                    <h5 class="col-4">Salon: Lab. Modelado y Simulación</h5>
+                    <h5 class="col-5">Tema de clases: Patrón arquitectonico</h5>
                 </div>
             </ng-template>
     </p-table>

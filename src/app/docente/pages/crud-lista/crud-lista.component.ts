@@ -4,6 +4,7 @@ import { Estudiante } from '../../interfaces/Estudiante.inteface';
 import jsPDF from "jspdf";
 import autoTable from 'jspdf-autotable';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/auth/services/auth.service';
 
 
 @Component({
@@ -16,7 +17,10 @@ export class CrudListaComponent implements OnInit {
 
   agregar:boolean=false;
   edit:boolean=false;
+  name:string='';
 
+  cols: any[]=[];
+  exportColumns: any[]=[];
   
   
  estudiantes:Estudiante[]=[
@@ -36,6 +40,10 @@ export class CrudListaComponent implements OnInit {
       nombreCompleto:'Carlos Muñoz',
       asistencia:true,
     },
+    {
+      nombreCompleto:'Carlos Alvarez',
+      asistencia:true,
+    },
   ]
   cloneStuden:Estudiante[]=[]
   cloneAsistencia:Estudiante[]=[]
@@ -45,9 +53,27 @@ export class CrudListaComponent implements OnInit {
     asistencia:[false,]
   })
   constructor(private fb:FormBuilder,
-              private cS:ConfirmationService) { }
+              private cS:ConfirmationService,
+              private authService:AuthService) { }
 
   ngOnInit(): void {
+    this.name= this.authService.usuario.name;
+    this.cols=[
+      {field: 'code', header:'Code', customExportHeader:'Product-Code'},
+      {field: 'name', header:'Name', customExportHeader:'Product'},
+    ]
+
+    this.exportColumns=this.cols.map(col=>({title: col.header, dataKey:col.field}))
+  }
+  exportPdf() {
+    
+    // import("jspdf").then(jsPDF => {
+    //     import("jspdf-autotable").then(x => {
+    //         const doc = new jsPDF.default(0,0);
+    //         doc.autoTable(this.exportColumns, this.cloneAsistencia);
+    //         doc.save('Lista.pdf');
+    //     })
+    // })
   }
 
 openNew(){
@@ -101,14 +127,6 @@ confirmEdit(estudiante:any){
 guardar(){
 
 }
-// exportPdf() {
-//   import("jspdf").then(jsPDF => {
-//       import("jspdf-autotable").then(x => {
-//           const doc = new jsPDF.default();
-//           autoTable(doc, {});
-//           doc.save('Lista.pdf');
-//       })
-//   })
-// }
+
 
 }

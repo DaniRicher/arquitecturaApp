@@ -40,7 +40,6 @@ export class ListaEstudianteComponent implements OnInit {
       asistencia:false
     },
   ];
-  selectedValues:boolean[]=[true];
 
   constructor() { }
 
