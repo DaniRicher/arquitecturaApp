@@ -26,7 +26,7 @@
             <ng-template pTemplate="body" let-estudiante>
                 <tr>
                     <td>{{estudiante.nombreCompleto}}</td>
-                    <td><p-checkbox class="flex justify-content-center" name="groupname" value="val1" [(ngModel)]="selectedValues" [disabled]="true"></p-checkbox></td>
+                    <td><p-checkbox class="flex justify-content-center"[(ngModel)]="estudiante.asistencia" [binary]="true" [disabled]="true"></p-checkbox></td>
                     <td>{{estudiante.fecha}}</td>
                 </tr>
             </ng-template>

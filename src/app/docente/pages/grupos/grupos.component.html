@@ -11,6 +11,7 @@
     <div class="grid estilo ">
         <div class="col-4" *ngFor="let asignatura of materias; let i">
             <p-card header="{{asignatura.nombre}}" class="justify-content-end">
+
                     <button pButton label="Detalles..." class="left-50" (click)="lista()"> </button>
             </p-card>
         </div>

@@ -20,25 +20,28 @@ export class ListaEstudianteComponent implements OnInit {
   
   estudiantes:any[]=[
     {
-      nombreCompleto:'Daniel',
+      nombreCompleto:'Daniel Alvarado',
       fecha:'2022-05-10',
-    }
-  ];
-  selectedValues:string[]=[];
-  materias:Materia[]=[
-    {
-      nombre:'Programacion web',
-      horario:'8-10',
-      grupo: 2,
-      asistencia:'2020'
+      asistencia:true
     },
     {
-      nombre:'Innovación empresarial',
-      horario:'2-4',
-      grupo: 1,
-      asistencia:'2020'
-    }
-]
+      nombreCompleto:'Daniel Alvarado',
+      fecha:'2022-05-12',
+      asistencia:true
+    },
+    {
+      nombreCompleto:'Daniel Alvarado',
+      fecha:'2022-05-14',
+      asistencia:true
+    },
+    {
+      nombreCompleto:'Daniel Alvarado',
+      fecha:'2022-05-18',
+      asistencia:false
+    },
+  ];
+  selectedValues:boolean[]=[true];
+
   constructor() { }
 
   ngOnInit(): void {

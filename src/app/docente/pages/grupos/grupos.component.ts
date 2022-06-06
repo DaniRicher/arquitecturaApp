@@ -3,6 +3,7 @@ import { DialogService } from 'primeng/dynamicdialog';
 import { Materia } from '../../interfaces/materia.interfaces';
 import { ListaPorMateriaDocenteComponent } from '../lista-por-materia-docente/lista-por-materia-docente.component';
 import { AuthService } from '../../../auth/services/auth.service';
+import { MateriasService } from '../../services/materias.service';
 
 
 @Component({
@@ -34,15 +35,22 @@ export class GruposComponent implements OnInit {
     },
     
   ]
+  asig:any=[]
   get usuario(){
     return this.authService.usuario;
   }
 
   constructor(private dialogService:DialogService,
-              private authService:AuthService) { }
+              private authService:AuthService,
+              private materiaService:MateriasService) { }
 
   ngOnInit(): void {
+    this.materiaService.materias()
+    .subscribe((ok)=>{
+      console.log(ok);
+    })
   }
+
   
 
   lista(){

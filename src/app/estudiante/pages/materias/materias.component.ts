@@ -23,8 +23,8 @@ export class MateriasComponent implements OnInit {
   asignaturas=[
     {
       materia:'Programacion Web',
-      horario:'',
-      grupo:0,
+      horario:'14-16',
+      grupo:2,
     },
     {
       materia:'Arquitectura',
@@ -32,18 +32,18 @@ export class MateriasComponent implements OnInit {
       grupo:1,
     },
     {
-      materia:'Cálculo Integral',
-      horario:'2-4',
+      materia:'Cálculo Diferencial',
+      horario:'17-19',
       grupo:4,
     },
     {
-      materia:'Cálculo Integral',
-      horario:'2-4',
-      grupo:4,
+      materia:'Inteligencia Artificial',
+      horario:'6-8',
+      grupo:3,
     },
     {
-      materia:'Cálculo Integral',
-      horario:'2-4',
+      materia:'Redes',
+      horario:'10-12',
       grupo:4,
     },
   ]

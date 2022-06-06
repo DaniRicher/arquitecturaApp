@@ -11,8 +11,8 @@ const routes: Routes = [
   {
     path:'estudiante',
     loadChildren:()=> import('./estudiante/estudiante.module').then(m=>m.EstudianteModule),
-    canActivate:[ValidarTokenGuard, ValidarLoginGuard ],
-    canLoad:[ValidarTokenGuard, ValidarLoginGuard]
+    canActivate:[ValidarTokenGuard ],
+    canLoad:[ValidarTokenGuard]
   },
   {
     path:'docente',
