@@ -14,10 +14,28 @@ export class ListaPorMateriaDocenteComponent implements OnInit {
   asignatura:Materia[]=[
     {
       nombre:'Programación Web',
+      grupo:4,
+      horario:'8-10',
+      asistencia:'2020-15-05'
+    },
+    {
+      nombre:'Programación Web',
+      grupo:2,
+      horario:'8-10',
+      asistencia:'2020-16-04'
+    },
+    {
+      nombre:'Programación Web',
       grupo:1,
       horario:'8-10',
-      asistencia:'2020-15-06'
-    }
+      asistencia:'2020-18-3'
+    },
+    {
+      nombre:'Programación Web',
+      grupo:3,
+      horario:'8-10',
+      asistencia:'2020-20-2'
+    },
   ]
 
   constructor(private dialogService:DialogService) { }
@@ -28,7 +46,7 @@ export class ListaPorMateriaDocenteComponent implements OnInit {
   abrirLista(){
     const ref= this.dialogService.open(CrudListaComponent,{
       header:'Asistencia',
-      width: '80%'
+      width: '90%'
     })
   }
 

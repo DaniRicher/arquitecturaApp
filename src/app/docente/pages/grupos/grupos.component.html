@@ -11,8 +11,6 @@
     <div class="grid estilo ">
         <div class="col-4" *ngFor="let asignatura of materias; let i">
             <p-card header="{{asignatura.nombre}}" class="justify-content-end">
-                    <h3>Horario: {{asignatura.horario}}</h3>
-                    <h3>Grupo: {{asignatura.grupo}}</h3>
                     <button pButton label="Detalles..." class="left-50" (click)="lista()"> </button>
             </p-card>
         </div>

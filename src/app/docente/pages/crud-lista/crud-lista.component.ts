@@ -16,12 +16,26 @@ export class CrudListaComponent implements OnInit {
 
   agregar:boolean=false;
   edit:boolean=false;
+
+  
   
  estudiantes:Estudiante[]=[
     {
-      nombreCompleto:'Daniel',
+      nombreCompleto:'Daniel Alvarado',
       asistencia:true,
-    }
+    },
+    {
+      nombreCompleto:'Enrique Arevalo',
+      asistencia:true,
+    },
+    {
+      nombreCompleto:'Andres Martinez',
+      asistencia:true,
+    },
+    {
+      nombreCompleto:'Carlos Muñoz',
+      asistencia:true,
+    },
   ]
   cloneStuden:Estudiante[]=[]
   cloneAsistencia:Estudiante[]=[]

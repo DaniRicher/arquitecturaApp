@@ -16,15 +16,21 @@ export class GruposComponent implements OnInit {
   materias:Materia[]=[
     {
       nombre:'Programacion Web',
-      horario:'',
+      horario:'8-10',
       grupo:0,
-      asistencia:'ff'
+      asistencia:''
     },
     {
-      nombre:'Programacion',
-      horario:'',
+      nombre:'Arquitectura de software',
+      horario:'10-12',
       grupo:0,
-      asistencia:'fff',
+      asistencia:'',
+    },
+    {
+      nombre:'Ingenieria de software',
+      horario:'10-12',
+      grupo:0,
+      asistencia:'',
     },
     
   ]
@@ -41,7 +47,7 @@ export class GruposComponent implements OnInit {
 
   lista(){
     const ref=this.dialogService.open(ListaPorMateriaDocenteComponent,{
-      header:``,
+      header:`Grupos`,
         width: '90%'
     })
   }

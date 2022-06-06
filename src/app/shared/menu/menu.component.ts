@@ -26,7 +26,7 @@ export class MenuComponent implements OnInit {
     this.items = [
       {label: this.authService.usuario.name,disabled:true},
       {label: 'Asignaturas', icon: 'pi pi-fw pi-user',  routerLink:'/docente/grupos'},
-      {label: 'Listas', icon: 'pi pi-fw pi-bookmark', routerLink:'/docente/lista'},
+      // {label: 'Listas', icon: 'pi pi-fw pi-bookmark', routerLink:'/docente/lista'},
       // {label: 'Calendario', icon: 'pi pi-fw pi-calendar', routerLink:'/docente/calendario'},
       // {label: 'Cerrar Sesion', icon: 'pi pi-sign-out', routerLink:'../auth/login',}
   ];

@@ -57,6 +57,7 @@ export class RegistroComponent implements OnInit {
     this.authService.registro(rol, email, name, codigo, password)
       .subscribe(ok=>{
         if(ok===true){
+          Swal.fire('Registro exitoso', undefined , 'success')
             localStorage.clear();
             this.router.navigateByUrl('/auth');
         }else{
