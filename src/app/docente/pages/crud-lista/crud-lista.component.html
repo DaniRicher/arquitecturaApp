@@ -46,15 +46,14 @@
                 <th>Eliminar</th>
             </tr>
         </ng-template>
-            <ng-template pTemplate="body" let-estudiante let-i="rowIndex">
-                <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
-                <tr>
-                    <td>{{i+1}}</td>
-                    <td>{{estudiante.nombreCompleto}}</td>
-                    <td><p-checkbox class="flex justify-content-center" [(ngModel)]="estudiante.asistencia" [binary]="true" [disabled]="true"></p-checkbox></td>
-                    <td><button pButton icon="pi pi-info-circle" label="Eliminar" class="ml-2 p-button-danger" (click)="eliminar(i)"></button></td>
-
-                </tr>
+        <ng-template pTemplate="body" let-estudiante let-i="rowIndex">
+            <tr>
+                <td>{{i+1}}</td>
+                <td>{{estudiante.nombreCompleto}}</td>
+                <td><p-checkbox class="flex justify-content-center" [(ngModel)]="estudiante.asistencia" [binary]="true" [disabled]="true"></p-checkbox></td>
+                <td><button pButton icon="pi pi-info-circle" label="Eliminar" class="ml-2 p-button-danger" (click)="eliminar(i)"></button></td>
+            </tr>
+            <p-confirmDialog *ngIf="confirm" [style]="{width: '450px'}"></p-confirmDialog>
             </ng-template>
             <ng-template pTemplate="summary" >
                 <div class="grid col-10">

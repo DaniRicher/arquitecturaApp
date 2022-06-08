@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { DialogService } from 'primeng/dynamicdialog';
 import { ListaEstudianteComponent } from '../lista-estudiante/lista-estudiante.component';
 import { AuthService } from '../../../auth/services/auth.service';
@@ -10,8 +9,7 @@ import { AuthService } from '../../../auth/services/auth.service';
   styles: [`
     .estilo{
         margin: 10px;
-        
-    },
+    }
     p-card{
       cursor:pointer;
     }
@@ -45,7 +43,7 @@ export class MateriasComponent implements OnInit {
       materia:'Redes',
       horario:'10-12',
       grupo:4,
-    },
+    }
   ]
 
   get usuario(){

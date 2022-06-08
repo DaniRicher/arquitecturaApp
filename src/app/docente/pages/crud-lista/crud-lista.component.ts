@@ -18,6 +18,7 @@ export class CrudListaComponent implements OnInit {
   agregar:boolean=false;
   edit:boolean=false;
   name:string='';
+  confirm:boolean=true;
 
   cols: any[]=[];
   exportColumns: any[]=[];
@@ -57,13 +58,7 @@ export class CrudListaComponent implements OnInit {
               private authService:AuthService) { }
 
   ngOnInit(): void {
-    this.name= this.authService.usuario.name;
-    this.cols=[
-      {field: 'code', header:'Code', customExportHeader:'Product-Code'},
-      {field: 'name', header:'Name', customExportHeader:'Product'},
-    ]
 
-    this.exportColumns=this.cols.map(col=>({title: col.header, dataKey:col.field}))
   }
   exportPdf() {
     
@@ -103,14 +98,20 @@ eliminarTodo(){
   // console.log(err);
 }
 eliminar(index:number){
+  // this.confirm=true;
   this.cS.confirm({
     message: '¿Estás seguro que desea eliminar el estudiante de la lista?',
     header: 'Confirmar',
     icon: 'pi pi-exclamation-triangle',
     accept:()=>{
-      this.estudiantes.splice(index,1)
+      this.estudiantes.splice(index,1);
+      this.confirm=false;
+    },reject:()=>{
+      this.confirm=false;
     }
+    
   })
+  this.confirm=true;
 }
 editar(estudiante:any){
   this.agregar=false;

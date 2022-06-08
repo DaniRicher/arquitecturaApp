@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
-import { Materia } from 'src/app/docente/interfaces/materia.interfaces';
 
 
 @Component({
@@ -9,7 +8,7 @@ import { Materia } from 'src/app/docente/interfaces/materia.interfaces';
   styles: [`
   .estilo{
         margin: 10px;
-    },
+    }
     img{
       width: 10px; 
     }
@@ -38,7 +37,7 @@ export class ListaEstudianteComponent implements OnInit {
       nombreCompleto:'Daniel Alvarado',
       fecha:'2022-05-18',
       asistencia:false
-    },
+    }
   ];
 
   constructor() { }

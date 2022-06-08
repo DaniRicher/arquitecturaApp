@@ -61,6 +61,7 @@ export class RegistroComponent implements OnInit {
             localStorage.clear();
             this.router.navigateByUrl('/auth');
         }else{
+          console.log(ok);
           Swal.fire('Error', ok, 'error' );
         }
       });
